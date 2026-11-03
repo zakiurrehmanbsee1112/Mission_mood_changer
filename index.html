@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation: Make Her Smile ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg,#ffe0eb,#f8c9dc,#e8d5ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    background: rgba(255,255,255,.88);
+    width: 100%;
+    max-width: 480px;
+    padding: 30px 23px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(140,60,110,.18);
+    position: relative;
+}
+
+h1 {
+    color: #d63384;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #bd397d;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #594454;
+    line-height: 1.7;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.emoji {
+    font-size: 65px;
+    margin: 15px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-10px); }
+}
+
+button {
+    border: none;
+    background: #e84393;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 8px 4px;
+    transition: .25s;
+}
+
+button:hover {
+    background: #bd2673;
+    transform: scale(1.05);
+}
+
+.secondary {
+    background: #a77ad5;
+}
+
+.hidden {
+    display: none;
+}
+
+.answer {
+    background: #fff0f6;
+    border-radius: 15px;
+    padding: 17px;
+    margin: 18px 0;
+    color: #b83280;
+    font-weight: bold;
+    min-height: 55px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 6s linear forwards;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    z-index: 1;
+}
+
+.small {
+    font-size: 12px;
+    color: #987c91;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SCREEN 1 -->
+<section id="screen1">
+    <div class="emoji">🤨</div>
+    <h1>HEY YOU!</h1>
+
+    <p>
+        Yes, YOU! The person reading this right now.
+        <br><br>
+        I've received a very serious complaint...
+    </p>
+
+    <div class="answer">
+        Someone reported that a certain girl
+        has forgotten how to smile! 😭
+    </div>
+
+    <p>
+        And I've been assigned a very important mission.
+    </p>
+
+    <button onclick="nextScreen(2)">
+        What mission? 👀
+    </button>
+</section>
+
+
+<!-- SCREEN 2 -->
+<section id="screen2" class="hidden">
+    <div class="emoji">🕵️‍♂️</div>
+    <h2>MISSION: OPERATION SMILE</h2>
+
+    <p>
+        Your mission is simple:
+        <br>
+        Answer some extremely difficult questions.
+    </p>
+
+    <p><b>Warning:</b> This test has absolutely no educational value. 😂</p>
+
+    <button onclick="nextScreen(3)">
+        I'm ready! 😎
+    </button>
+</section>
+
+
+<!-- SCREEN 3 -->
+<section id="screen3" class="hidden">
+    <div class="emoji">🤔</div>
+    <h2>Question No. 1</h2>
+
+    <p>
+        If you throw a red stone into the blue sea,
+        what will happen to the stone?
+    </p>
+
+    <button onclick="showAnswer('Wrong! It will get wet. Congratulations, Einstein! 😂')">
+        It becomes blue
+    </button>
+
+    <button onclick="showAnswer('WRONG! It becomes wet. Even a fish knew that! 😭')">
+        It disappears
+    </button>
+
+    <button onclick="showAnswer('CORRECT! Finally, someone with a functioning brain! 😂❤️')">
+        It gets wet
+    </button>
+
+    <div class="answer" id="answer"></div>
+
+    <button onclick="nextScreen(4)">Next question →</button>
+</section>
+
+
+<!-- SCREEN 4 -->
+<section id="screen4" class="hidden">
+    <div class="emoji">🤣</div>
+    <h2>Question No. 2</h2>
+
+    <p>
+        What's the most dangerous thing in the world?
+    </p>
+
+    <button onclick="showAnswer2('A hungry lion? Nah! A girl saying NOTHING is much more mysterious. 😭😂')">
+        A hungry lion 🦁
+    </button>
+
+    <button onclick="showAnswer2('Nope! Even a volcano gives some warning. 😂')">
+        A volcano 🌋
+    </button>
+
+    <button onclick="showAnswer2('Exactly! Especially when someone asks: Are you okay? And the answer is YES. 😭')">
+        Someone saying "I'm fine" 😭
+    </button>
+
+    <div class="answer" id="answer2"></div>
+
+    <button onclick="nextScreen(5)">Continue 😂</button>
+</section>
+
+
+<!-- SCREEN 5 -->
+<section id="screen5" class="hidden">
+    <div class="emoji">😏</div>
+    <h2>WAIT... HOLD ON!</h2>
+
+    <p>
+        Enough comedy.
+        <br><br>
+        I think the investigation has discovered
+        something interesting...
+    </p>
+
+    <div class="answer">
+        You're actually pretty adorable.
+        <br>
+        Don't let that smile go missing again. 😉
+    </div>
+
+    <button onclick="nextScreen(6)">
+        Oh really? 😏
+    </button>
+</section>
+
+
+<!-- SCREEN 6 -->
+<section id="screen6" class="hidden">
+    <div class="emoji">💘</div>
+    <h2>THE FLIRTING ZONE</h2>
+
+    <p>
+        Okay, serious question...
+        <br><br>
+        Are you always this cute, or is today a special occasion?
+    </p>
+
+    <button onclick="showFlirt()">
+        Give me another one 😂
+    </button>
+
+    <div class="answer" id="flirtAnswer">
+        Tap the button. Let's see what happens! 👀
+    </div>
+
+    <button onclick="nextScreen(7)">One last surprise ❤️</button>
+</section>
+
+
+<!-- SCREEN 7 -->
+<section id="screen7" class="hidden">
+    <div class="emoji">🥹❤️</div>
+    <h2>A LITTLE REMINDER</h2>
+
+    <p>
+        Hey, listen...
+        <br><br>
+        I don't know everything you're dealing with.
+        And you don't have to pretend that everything
+        is okay.
+        <br><br>
+        Just remember:
+        You deserve peaceful days, genuine laughter,
+        beautiful moments and people who understand you.
+        <br><br>
+        Take a breath. Give yourself a little time.
+        <br><br>
+        And whenever you feel like smiling,
+        I hope this little corner of the internet
+        gives you one more reason. ❤️
+    </p>
+
+    <h2>MISSION COMPLETE? 🥰</h2>
+
+    <p>
+        One final question...
+        <br>
+        Did this silly website make you smile?
+    </p>
+
+    <button onclick="finalAnswer('YES! Mission accomplished! 🎉❤️')">
+        YES! 🥰
+    </button>
+
+    <button class="secondary"
+    onclick="finalAnswer('Not yet? That is okay. No pressure. You deserve time and care too. ❤️')">
+        Not yet 🙈
+    </button>
+
+    <div class="answer" id="finalAnswer"></div>
+
+    <p class="small">
+        Made with a little mischief and lots of good wishes. ❤️
+    </p>
+</section>
+
+</div>
+
+<script>
+
+function nextScreen(number) {
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.add("hidden");
+    });
+
+    document.getElementById("screen" + number)
+        .classList.remove("hidden");
+}
+
+function showAnswer(message) {
+    document.getElementById("answer").innerText = message;
+}
+
+function showAnswer2(message) {
+    document.getElementById("answer2").innerText = message;
+}
+
+const flirts = [
+    "Are you a notification? Because seeing you makes the day more interesting. 😂❤️",
+
+    "I was going to write something clever, but your cuteness interrupted my thoughts. 😭",
+
+    "If smiles were currency, you'd be a billionaire. 💰🥰",
+
+    "Warning: Excessive cuteness detected. Please reduce it immediately. 😂",
+
+    "Do you have a map? Because this conversation keeps getting unexpectedly adorable. 😏",
+
+    "You know what your superpower is? Making ordinary moments feel special. ❤️",
+
+    "I'm not a photographer, but this conversation deserves a frame. 😂"
+];
+
+let flirtIndex = 0;
+
+function showFlirt() {
+    document.getElementById("flirtAnswer").innerText =
+        flirts[flirtIndex];
+
+    flirtIndex = (flirtIndex + 1) % flirts.length;
+}
+
+function finalAnswer(message) {
+    document.getElementById("finalAnswer").innerText = message;
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["❤️","💕","💗","✨","🌸"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 800);
+
+</script>
+
+</body>
+</html>
